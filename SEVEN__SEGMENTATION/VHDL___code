@@ -1,0 +1,56 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    17:31:34 12/03/2019 
+-- Design Name: 
+-- Module Name:    seven_segmentationMODULE - lift_demo 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity seven_segmentationMODULE is
+    Port ( A : in  STD_LOGIC;
+           B : in  STD_LOGIC;
+           C : in  STD_LOGIC;
+           D : in  STD_LOGIC;
+           S0 : out  STD_LOGIC;
+           S1 : out  STD_LOGIC;
+           S2 : out  STD_LOGIC;
+           S3 : out  STD_LOGIC;
+           S4 : out  STD_LOGIC;
+           S5 : out  STD_LOGIC;
+           S6 : out  STD_LOGIC);
+end seven_segmentationMODULE;
+
+architecture lift_demo of seven_segmentationMODULE is
+
+begin
+S0 <= NOT(((NOT A)AND(NOT B)AND(NOT C)AND(D)) OR (B AND (NOT C)AND (NOT D)));	S1 <= NOT((B AND (NOT C)AND D) OR (B AND C AND (NOT D)));
+S2 <= NOT((NOT B)AND C AND (NOT D));
+S3 <= NOT((B AND (NOT C)AND (NOT D)) OR ((NOT A)AND (NOT B)AND (NOT C)AND D) OR (B AND C AND D));
+S4 <= NOT((D)OR (B AND(NOT C)));
+S5 <= NOT((C AND D)OR((NOT B)AND C)OR((NOT A)AND(NOT B)AND D));
+S6 <= NOT(((NOT A)AND(NOT B)AND(NOT C))OR(B AND C AND D));
+end lift_demo;
+
