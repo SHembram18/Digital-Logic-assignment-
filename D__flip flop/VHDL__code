@@ -1,0 +1,60 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    16:31:23 12/05/2019 
+-- Design Name: 
+-- Module Name:    D_flipFlopMODULE - D_FF 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity D_flipFlopMODULE is
+    Port ( D : in  STD_LOGIC;
+           RESET : in  STD_LOGIC;
+           CLK : in  STD_LOGIC;
+           Q : out  STD_LOGIC;
+           Q_BAR : out  STD_LOGIC);
+end D_flipFlopMODULE;
+
+architecture D_FF of D_flipFlopMODULE is
+
+	signal temp : STD_LOGIC;
+
+begin
+	processForD: process(CLK)
+	BEGIN
+			if rising_edge(CLK) then
+				if RESET = '1' then
+					temp <= '0';
+				else
+					temp <= D;
+				end if;
+			end if;
+		end process processForD;
+		Q <= temp;
+		Q_BAR <= not(temp);
+
+
+end D_FF;
+
