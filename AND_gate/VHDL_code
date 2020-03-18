@@ -1,0 +1,44 @@
+   ----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    07:29:46 10/02/2019 
+-- Design Name: 
+-- Module Name:    ANDdemo1 - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity ANDdemo1 is
+PORT(A:IN STD_LOGIC;
+     B:IN STD_LOGIC;
+	  C:OUT STD_LOGIC);
+end ANDdemo1;
+
+architecture Behavioral of ANDdemo1 is
+
+begin
+C <= A AND B;
+
+end Behavioral;
+
