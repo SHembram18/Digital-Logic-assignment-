@@ -1,0 +1,84 @@
+ --------------------------------------------------------------------------------
+-- Company: 
+-- Engineer:
+--
+-- Create Date:   17:45:44 10/03/2019
+-- Design Name:   
+-- Module Name:   D:/VHDL PROGRAMMING/NOTdemo/NOTtest.vhd
+-- Project Name:  NOTdemo
+-- Target Device:  
+-- Tool versions:  
+-- Description:   
+-- 
+-- VHDL Test Bench Created by ISE for module: NOT1
+-- 
+-- Dependencies:
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+--
+-- Notes: 
+-- This testbench has been automatically generated using types std_logic and
+-- std_logic_vector for the ports of the unit under test.  Xilinx recommends
+-- that these types always be used for the top-level I/O of a design in order
+-- to guarantee that the testbench will bind correctly to the post-implementation 
+-- simulation model.
+--------------------------------------------------------------------------------
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ 
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--USE ieee.numeric_std.ALL;
+ 
+ENTITY NOTtest IS
+END NOTtest;
+ 
+ARCHITECTURE behavior OF NOTtest IS 
+ 
+    -- Component Declaration for the Unit Under Test (UUT)
+ 
+    COMPONENT NOT1
+    PORT(
+         A : IN  std_logic;
+         B : OUT  std_logic
+        );
+    END COMPONENT;
+    
+
+   --Inputs
+   signal A : std_logic := '0';
+
+ 	--Outputs
+   signal B : std_logic;
+   -- No clocks detected in port list. Replace <clock> below with 
+   -- appropriate port name 
+ 
+ 
+BEGIN
+ 
+	-- Instantiate the Unit Under Test (UUT)
+   uut: NOT1 PORT MAP (
+          A => A,
+          B => B
+        );
+
+   -- Clock process definitions
+   
+
+   -- Stimulus process
+   stim_proc: process
+   begin		
+      -- hold reset state for 100 ns.
+      wait for 100 ns;	
+      A<='1';
+		wait for 100 ns;
+		A<='0';
+      
+      -- insert stimulus here 
+
+      wait;
+   end process;
+
+END;
