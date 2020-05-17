@@ -6,4 +6,4 @@
 
 ### THANKS FOR VISITING THE PAGE !!!
 
-![](https://logodix.com/logo/2176115.png)
+![](https://github.com/HembramBeta777/clickable-icons-for-readmeFile/blob/master/icon_git/icons8-pray-60.png?raw=true)
